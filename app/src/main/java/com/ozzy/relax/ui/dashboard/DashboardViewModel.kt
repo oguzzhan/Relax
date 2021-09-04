@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ozzy.relax.data.model.Meditation
 import com.ozzy.relax.data.model.Resource
+import com.ozzy.relax.data.model.Story
 import com.ozzy.relax.utils.Session
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
@@ -18,6 +19,7 @@ class DashboardViewModel @Inject constructor(
 ) : ViewModel() {
 
     val meditationsLiveData = MutableLiveData<List<Meditation>>()
+    val storiesLiveData = MutableLiveData<List<Story>>()
     val userName = Session.getInstance()
 
     val bannerVisibility = MutableLiveData<Boolean>().apply { value = true }
@@ -42,6 +44,9 @@ class DashboardViewModel @Inject constructor(
                     is Resource.Success -> {
                         it.data?.body()?.meditations?.let { meditations ->
                             meditationsLiveData.value = meditations
+                        }
+                        it.data?.body()?.stories?.let { stories ->
+                            storiesLiveData.value = stories
                         }
                     }
                 }

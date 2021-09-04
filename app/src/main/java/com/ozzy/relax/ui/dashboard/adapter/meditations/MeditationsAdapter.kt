@@ -11,9 +11,10 @@ import com.ozzy.relax.databinding.ItemMeditationsBinding
 /**
  * Created by Oğuzhan Karacan on 4.09.2021.
  */
-class MeditationsAdapter : ListAdapter<Meditation, MeditationsAdapter.MeditationsViewHolder>(
-    DIFF_CALLBACK
-) {
+class MeditationsAdapter(private val onClick: ((Meditation) -> Unit)?) :
+    ListAdapter<Meditation, MeditationsAdapter.MeditationsViewHolder>(
+        DIFF_CALLBACK
+    ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MeditationsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemMeditationsBinding.inflate(inflater, parent, false)
@@ -22,6 +23,7 @@ class MeditationsAdapter : ListAdapter<Meditation, MeditationsAdapter.Meditation
 
     override fun onBindViewHolder(holder: MeditationsViewHolder, position: Int) {
         holder.bindData(getItem(position))
+        holder.setOnClickListener(getItem(position))
     }
 
 
@@ -29,6 +31,12 @@ class MeditationsAdapter : ListAdapter<Meditation, MeditationsAdapter.Meditation
         RecyclerView.ViewHolder(binding.root) {
         fun bindData(item: Meditation) {
             binding.item = item
+        }
+
+        fun setOnClickListener(item: Meditation) {
+            binding.root.setOnClickListener {
+                onClick?.invoke(item)
+            }
         }
     }
 }

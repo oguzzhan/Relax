@@ -1,6 +1,8 @@
 package com.ozzy.relax.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class DashboardResponse(
     @SerializedName("isBannerEnabled")
@@ -11,6 +13,7 @@ data class DashboardResponse(
     val stories: List<Story>? = null
 )
 
+@Parcelize
 data class Meditation(
     @SerializedName("title")
     val title: String? = null,
@@ -22,8 +25,9 @@ data class Meditation(
     val releaseDate: String? = null,
     @SerializedName("content")
     val content: String? = null
-)
+) : Parcelable
 
+@Parcelize
 data class Story(
     @SerializedName("name")
     val name: String? = null,
@@ -35,11 +39,12 @@ data class Story(
     val date: String? = null,
     @SerializedName("text")
     val text: String? = null
-)
+) : Parcelable
 
+@Parcelize
 data class Image(
     @SerializedName("small")
     val small: String? = null,
     @SerializedName("large")
     val large: String? = null
-)
+) : Parcelable

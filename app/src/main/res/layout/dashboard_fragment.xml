@@ -42,6 +42,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/textViewMeditationsTitle"
                 app:meditationsList="@{viewModel.meditationsLiveData}"
+                app:meditationClick="@{viewModel.meditationClicked}"
                 tools:listitem="@layout/item_meditations" />
 
             <androidx.cardview.widget.CardView
@@ -119,6 +120,7 @@
                 app:layout_constraintTop_toBottomOf="@id/textViewStories"
                 app:spanCount="2"
                 app:storyList="@{viewModel.storiesLiveData}"
+                app:storyClick="@{viewModel.storyClicked}"
                 tools:listitem="@layout/item_stories" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

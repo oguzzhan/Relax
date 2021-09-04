@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.ozzy.relax.R
 import com.ozzy.relax.databinding.DashboardFragmentBinding
 import com.ozzy.relax.utils.extension.backGroundColor
@@ -26,5 +27,14 @@ class DashboardFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.viewModel?.navigationAction?.observe(viewLifecycleOwner) {
+            it.getContentIfNotHandled()?.let { action ->
+                findNavController().navigate(action)
+            }
+        }
     }
 }

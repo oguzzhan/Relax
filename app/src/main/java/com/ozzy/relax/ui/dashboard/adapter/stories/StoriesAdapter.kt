@@ -12,7 +12,7 @@ import com.ozzy.relax.ui.dashboard.adapter.stories.StoriesAdapter.StoryViewHolde
 /**
  * Created by Oğuzhan Karacan on 4.09.2021.
  */
-class StoriesAdapter : ListAdapter<Story, StoryViewHolder>(
+class StoriesAdapter(private val onClick: ((Story) -> Unit)?) : ListAdapter<Story, StoryViewHolder>(
     DIFF_CALLBACK
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoryViewHolder {
@@ -23,6 +23,7 @@ class StoriesAdapter : ListAdapter<Story, StoryViewHolder>(
 
     override fun onBindViewHolder(holder: StoryViewHolder, position: Int) {
         holder.bindData(getItem(position))
+        holder.setOnClickListener(getItem(position))
     }
 
 
@@ -30,6 +31,12 @@ class StoriesAdapter : ListAdapter<Story, StoryViewHolder>(
         RecyclerView.ViewHolder(binding.root) {
         fun bindData(item: Story) {
             binding.item = item
+        }
+
+        fun setOnClickListener(item: Story) {
+            binding.root.setOnClickListener {
+                onClick?.invoke(item)
+            }
         }
     }
 }

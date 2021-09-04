@@ -4,9 +4,11 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.NavDirections
 import com.ozzy.relax.data.model.Meditation
 import com.ozzy.relax.data.model.Resource
 import com.ozzy.relax.data.model.Story
+import com.ozzy.relax.utils.Event
 import com.ozzy.relax.utils.Session
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
@@ -52,5 +54,17 @@ class DashboardViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    val navigationAction = MutableLiveData<Event<NavDirections>>()
+
+    val storyClicked: (Story) -> Unit = {
+        val action = DashboardFragmentDirections.actionDashboardFragmentToDetailFragment(story = it)
+        navigationAction.value = Event(action)
+    }
+    val meditationClicked: (Meditation) -> Unit = {
+        val action =
+            DashboardFragmentDirections.actionDashboardFragmentToDetailFragment(meditation = it)
+        navigationAction.value = Event(action)
     }
 }

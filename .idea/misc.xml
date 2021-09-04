@@ -9,7 +9,7 @@
         <entry key="app/src/main/res/drawable/moon.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/font/hanken.xml" value="0.21944444444444444" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.159375" />
-        <entry key="app/src/main/res/layout/dashboard_fragment.xml" value="0.24442355880396693" />
+        <entry key="app/src/main/res/layout/dashboard_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/detail_fragment.xml" value="0.159375" />
         <entry key="app/src/main/res/layout/item_meditations.xml" value="0.625" />
         <entry key="app/src/main/res/layout/item_stories.xml" value="0.165" />

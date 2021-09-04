@@ -25,6 +25,7 @@ class LoginFragment : Fragment() {
             requireActivity().backGroundColorDrawable(it)
         }
         binding = LoginFragmentBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         return binding.root
     }

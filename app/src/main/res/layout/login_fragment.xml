@@ -40,6 +40,7 @@
                 android:id="@+id/editTextLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@={viewModel.userName}"
                 android:background="@android:color/transparent"
                 android:hint="@string/login_hint"
                 android:inputType="text"
@@ -63,23 +64,37 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:hint="@string/password_hint"
+                android:text="@={viewModel.password}"
                 android:inputType="textPassword"
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp"
                 android:textColorHint="@color/pig_iron" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/textViewError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/login_error"
+            android:textColor="@color/red"
+            android:visibility="@{viewModel.errorVisible}"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPasswordLayout"
+            tools:layout_editor_absoluteX="24dp" />
+
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton"
             android:layout_width="0dp"
             android:layout_height="65dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="4dp"
             android:backgroundTint="@color/glimpse"
+            android:onClick="@{v-> viewModel.buttonClick()}"
             android:text="@string/login_continue"
             app:cornerRadius="36.21dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextPasswordLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewError" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

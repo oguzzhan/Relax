@@ -4,4 +4,5 @@
     <string name="login_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="login_continue">Continue</string>
+    <string name="login_error">User name should have at least 2 characters \n Password should contain at least 1 number and 1 uppercase character</string>
 </resources>

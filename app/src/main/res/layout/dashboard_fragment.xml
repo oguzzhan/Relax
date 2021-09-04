@@ -18,14 +18,12 @@
 
         <TextView
             android:id="@+id/textViewMeditationsTitle"
+            style="@style/DashboardTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="44dp"
-            android:fontFamily="@font/hanken_book"
             android:text="@string/dashboard_meditations_title"
-            android:textColor="@color/white"
-            android:textSize="24sp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -39,6 +37,68 @@
             app:layout_constraintTop_toBottomOf="@id/textViewMeditationsTitle"
             app:meditationsList="@{viewModel.meditationsLiveData}"
             tools:listitem="@layout/item_meditations" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewBanner"
+            android:layout_width="match_parent"
+            android:layout_height="124dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:visibility="@{viewModel.bannerVisibility}"
+            app:cardBackgroundColor="@color/purple_banner"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewMeditations">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageViewMoon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:contentDescription="@string/moon_image_description"
+                    android:src="@drawable/moon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/BannerText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="16dp"
+                    android:bannerText="@{viewModel.userName}"
+                    app:layout_constraintBottom_toBottomOf="@id/imageViewMoon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageViewMoon"
+                    app:layout_constraintTop_toTopOf="@id/imageViewMoon"
+                    tools:text="@tools:sample/lorem" />
+
+                <ImageButton
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="@string/hide_banner_description"
+                    android:onClick="@{(v)->viewModel.hideClick()}"
+                    android:src="@drawable/ic_baseline_close_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            style="@style/DashboardTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/dashboard_stories_title"
+            app:layout_constraintTop_toBottomOf="@id/cardViewBanner" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

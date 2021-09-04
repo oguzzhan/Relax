@@ -17,4 +17,5 @@
     <color name="login_text_color">@color/pig_iron</color>
     <color name="dashboard_dark">#030306</color>
     <color name="dashboard_light">#394778</color>
+    <color name="purple_banner">#4036A3</color>
 </resources>

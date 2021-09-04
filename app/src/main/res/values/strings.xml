@@ -7,4 +7,8 @@
     <string name="login_error">User name should have at least 2 characters \n Password should contain at least 1 number and 1 uppercase character</string>
     <string name="dashboard_meditations_title">Meditations</string>
     <string name="meditation_image_desc">meditation_desc</string>
+    <string name="banner_text">Look %1$s. Pretty, isn’t it? Perfectly balanced. As all things should be.</string>
+    <string name="moon_image_description">moonImageDescription</string>
+    <string name="hide_banner_description">hideBannerDescription</string>
+    <string name="dashboard_stories_title">Stories</string>
 </resources>

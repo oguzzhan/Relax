@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ozzy.relax.utils.Event
+import com.ozzy.relax.utils.Session
 
 
 class LoginViewModel : ViewModel() {
@@ -17,6 +18,7 @@ class LoginViewModel : ViewModel() {
     fun buttonClick() {
         if (validatePassword() && validateUserName()) {
             Log.d("matches", "success")
+            Session.setInstance(userName.value ?: "")
             errorVisible.value = false
             goToDashboard.value = Event(true)
         } else {

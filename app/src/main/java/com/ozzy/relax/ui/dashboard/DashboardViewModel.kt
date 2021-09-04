@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ozzy.relax.data.model.Meditation
 import com.ozzy.relax.data.model.Resource
+import com.ozzy.relax.utils.Session
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -17,6 +18,12 @@ class DashboardViewModel @Inject constructor(
 ) : ViewModel() {
 
     val meditationsLiveData = MutableLiveData<List<Meditation>>()
+    val userName = Session.getInstance()
+
+    val bannerVisibility = MutableLiveData<Boolean>().apply { value = true }
+    fun hideClick() {
+        bannerVisibility.value = false
+    }
 
     init {
         getDashboardData()

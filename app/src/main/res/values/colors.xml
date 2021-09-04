@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="glimpse">#2C74F4</color>
+    <color name="blue">#009FE8</color>
+    <color name="pig_iron">#484848</color>
+    <color name="gray40">#66AFAFAF</color>
+    <color name="login_text_color">@color/pig_iron</color>
 </resources>

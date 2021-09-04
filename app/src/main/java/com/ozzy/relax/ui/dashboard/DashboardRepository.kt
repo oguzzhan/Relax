@@ -1,4 +1,4 @@
-package com.ozzy.relax.ui.main
+package com.ozzy.relax.ui.dashboard
 
 import com.ozzy.relax.data.NetworkBoundResource
 import com.ozzy.relax.data.RelaxService

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/dashboard.xml" value="0.2462962962962963" />
         <entry key="app/src/main/res/drawable/login_status_bar.xml" value="0.21944444444444444" />
         <entry key="app/src/main/res/font/hanken.xml" value="0.21944444444444444" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.159375" />

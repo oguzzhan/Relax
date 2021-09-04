@@ -14,3 +14,9 @@ fun Activity.backGroundColorDrawable(drawable: Drawable) {
     window.statusBarColor = ContextCompat.getColor(this, android.R.color.transparent)
     window.setBackgroundDrawable(drawable)
 }
+
+fun Activity.backGroundColor(color: Int) {
+    window.statusBarColor =
+        ContextCompat.getColor(this, android.R.color.transparent)
+    window.statusBarColor = ContextCompat.getColor(this, color)
+}

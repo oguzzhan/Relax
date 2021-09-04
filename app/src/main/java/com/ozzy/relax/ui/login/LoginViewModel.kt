@@ -3,6 +3,7 @@ package com.ozzy.relax.ui.login
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.ozzy.relax.utils.Event
 
 
 class LoginViewModel : ViewModel() {
@@ -10,13 +11,17 @@ class LoginViewModel : ViewModel() {
     val password = MutableLiveData<String>().apply { value = "" }
     val errorVisible = MutableLiveData<Boolean>().apply { value = false }
 
+    val goToDashboard = MutableLiveData<Event<Boolean>>().apply { value = Event(false) }
+
 
     fun buttonClick() {
         if (validatePassword() && validateUserName()) {
             Log.d("matches", "success")
             errorVisible.value = false
+            goToDashboard.value = Event(true)
         } else {
             errorVisible.value = true
+            goToDashboard.value = Event(false)
         }
     }
 

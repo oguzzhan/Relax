@@ -7,8 +7,8 @@ import com.ozzy.relax.utils.Event
 
 
 class LoginViewModel : ViewModel() {
-    val userName = MutableLiveData<String>().apply { value = "" }
-    val password = MutableLiveData<String>().apply { value = "" }
+    val userName = MutableLiveData<String>().apply { value = "asdasd" }
+    val password = MutableLiveData<String>().apply { value = "1Qaafa" }
     val errorVisible = MutableLiveData<Boolean>().apply { value = false }
 
     val goToDashboard = MutableLiveData<Event<Boolean>>().apply { value = Event(false) }

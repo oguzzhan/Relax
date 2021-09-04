@@ -1,8 +1,10 @@
 package com.ozzy.relax.ui.dashboard
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ozzy.relax.data.model.Meditation
 import com.ozzy.relax.data.model.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
@@ -14,7 +16,13 @@ class DashboardViewModel @Inject constructor(
     private val repository: DashboardRepository
 ) : ViewModel() {
 
-    fun getDashboardData() {
+    val meditationsLiveData = MutableLiveData<List<Meditation>>()
+
+    init {
+        getDashboardData()
+    }
+
+    private fun getDashboardData() {
         viewModelScope.launch {
             repository.getDashboard().collect {
                 when (it) {
@@ -25,7 +33,9 @@ class DashboardViewModel @Inject constructor(
                         Log.d("getDashboard", "Error")
                     }
                     is Resource.Success -> {
-                        Log.d("getDashboard", "Success")
+                        it.data?.body()?.meditations?.let { meditations ->
+                            meditationsLiveData.value = meditations
+                        }
                     }
                 }
             }

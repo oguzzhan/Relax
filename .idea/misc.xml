@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/dashboard.xml" value="0.2462962962962963" />
+        <entry key="app/src/main/res/drawable/image_rounded_corner_background.xml" value="0.2462962962962963" />
         <entry key="app/src/main/res/drawable/login_status_bar.xml" value="0.21944444444444444" />
         <entry key="app/src/main/res/font/hanken.xml" value="0.21944444444444444" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.159375" />
-        <entry key="app/src/main/res/layout/dashboard_fragment.xml" value="0.1453125" />
+        <entry key="app/src/main/res/layout/dashboard_fragment.xml" value="0.27441285537700866" />
         <entry key="app/src/main/res/layout/detail_fragment.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/item_meditations.xml" value="0.625" />
         <entry key="app/src/main/res/layout/login_fragment.xml" value="0.29791666666666666" />
       </map>
     </option>

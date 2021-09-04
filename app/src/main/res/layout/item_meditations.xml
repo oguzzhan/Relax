@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.ozzy.relax.data.model.Meditation" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="24dp"
+        android:background="@null"
+        android:paddingBottom="24dp"
+        tools:background="@null">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:minHeight="156dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/meditation_image_desc"
+                android:scaleType="fitCenter"
+                android:src="@{item.image.small}"
+                tools:src="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textViewMeditationTitle"
+            style="@style/MeditationsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{item.title}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            tools:text="Sleep Well" />
+
+        <TextView
+            android:id="@+id/textViewMeditationSubTitle"
+            style="@style/MeditationsSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{item.title}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewMeditationTitle"
+            tools:text="A dreamy sleep" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

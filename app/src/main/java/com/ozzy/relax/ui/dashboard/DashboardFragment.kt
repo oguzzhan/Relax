@@ -23,9 +23,8 @@ class DashboardFragment : Fragment() {
     ): View {
         requireActivity().backGroundColor(R.color.dashboard_dark)
         binding = DashboardFragmentBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         return binding.root
     }
-
-
 }

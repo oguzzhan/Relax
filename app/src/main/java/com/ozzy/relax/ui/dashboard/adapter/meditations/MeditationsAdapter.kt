@@ -1,4 +1,4 @@
-package com.ozzy.relax.ui.dashboard.adapter
+package com.ozzy.relax.ui.dashboard.adapter.meditations
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

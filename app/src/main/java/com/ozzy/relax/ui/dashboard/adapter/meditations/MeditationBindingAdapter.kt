@@ -1,4 +1,4 @@
-package com.ozzy.relax.ui.dashboard.adapter
+package com.ozzy.relax.ui.dashboard.adapter.meditations
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView

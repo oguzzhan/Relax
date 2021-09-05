@@ -1,8 +1,10 @@
 package com.ozzy.relax.utils
 
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import com.google.android.material.appbar.MaterialToolbar
@@ -43,5 +45,24 @@ fun setToolbarTitle(materialToolbar: MaterialToolbar, detailType: DetailType?) {
         null -> {
             materialToolbar.setTitle(R.string.detail_page_title)
         }
+    }
+}
+
+@BindingAdapter("android:isPlaying")
+fun setPlayButton(imageButton: ImageButton, isPlaying: Boolean?) {
+    if (isPlaying == true) {
+        imageButton.setImageDrawable(
+            ContextCompat.getDrawable(
+                imageButton.context,
+                R.drawable.ic_baseline_pause_circle_filled_24
+            )
+        )
+    } else {
+        imageButton.setImageDrawable(
+            ContextCompat.getDrawable(
+                imageButton.context,
+                R.drawable.ic_baseline_play_circle_filled_24
+            )
+        )
     }
 }

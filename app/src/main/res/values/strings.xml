@@ -11,4 +11,8 @@
     <string name="moon_image_description">moonImageDescription</string>
     <string name="hide_banner_description">hideBannerDescription</string>
     <string name="dashboard_stories_title">Stories</string>
+    <string name="detail_page_title">Detail</string>
+    <string name="detail_page_story_title">Story Detail</string>
+    <string name="detail_page_meditation_title">Meditation Detail</string>
+    <string name="detail_image_description">detailImageDescription</string>
 </resources>

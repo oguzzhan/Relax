@@ -37,6 +37,17 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <ImageView
+            android:id="@+id/imageViewItemImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@{viewModel.item.image}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="90dp"
